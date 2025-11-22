@@ -174,9 +174,17 @@ public class TrinketCatalyst extends Item {
 			add( message );
 
 			//roll new trinkets if trinkets were not already rolled
-			while (cata.rolledTrinkets.size() < NUM_TRINKETS-1){
-				cata.rolledTrinkets.add((Trinket) Generator.random(Generator.Category.TRINKET));
-			}
+			//while (cata.rolledTrinkets.size() < NUM_TRINKETS-1){
+			//	cata.rolledTrinkets.add((Trinket) Generator.random(Generator.Category.TRINKET));
+			//}
+            // Zuerst die Liste leeren, damit wir sicher sind, dass nichts anderes drin ist
+            cata.rolledTrinkets.clear();
+
+            // Hier fügst du deine Wunsch-Items hinzu
+            // Du musst sicherstellen, dass die Klassennamen exakt stimmen (Groß/Kleinschreibung)
+            cata.rolledTrinkets.add( new MimicTooth() );
+            cata.rolledTrinkets.add( new RatSkull() );
+            cata.rolledTrinkets.add( new ParchmentScrap() ); // Beispiel für das 3. Item
 
 			for (int i = 0; i < NUM_TRINKETS; i++){
 				ItemButton btnReward = new ItemButton() {
