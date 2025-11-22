@@ -57,7 +57,7 @@ public class MimicTooth extends Trinket {
 		if (level == -1){
 			return 1f;
 		} else {
-			return 1.5f + 0.5f*level;
+			return 1.5f + 0.8f*level;
 		}
 	}
 
@@ -71,7 +71,7 @@ public class MimicTooth extends Trinket {
 
 	public static float ebonyMimicChance( int level ){
 		if (level >= 0){
-			return 0.125f + 0.125f * level;
+			return 0.125f + 1.125f * level;
 		} else {
 			return 0;
 		}
