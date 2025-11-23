@@ -129,6 +129,13 @@ public class ScrollOfUpgrade extends InventoryScroll {
 		} else {
 			item = item.upgrade();
 		}
+        // --- HIER IST DER TRICK ---
+        // Wir führen einfach sofort ein zweites Upgrade aus.
+        // Da 'item' das aktualisierte Item ist, wird es von Level X+1 auf X+2 gehoben.
+        if (item.isUpgradable()) {
+            item = item.upgrade();
+        }
+        // --------------------------
 
 		Badges.validateItemLevelAquired( item );
 		Statistics.upgradesUsed++;

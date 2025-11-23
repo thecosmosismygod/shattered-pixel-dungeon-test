@@ -8,8 +8,13 @@ android {
     sourceSets.main.assets.srcDirs = [new File(project(':core').projectDir, "/src/main/assets")]
 
     defaultConfig {
-        manifestPlaceholders = [appName:appName]
-        applicationId appPackageName
+        // manifestPlaceholders = [appName:appName]
+        // applicationId appPackageName
+        // Hier den Namen festlegen:
+        manifestPlaceholders = [appName:"Mein Mod"]
+
+        // Hier die ID festlegen:
+        applicationId "com.shatteredpixel.shatteredpixeldungeon.meintest"
 
         versionCode appVersionCode
         versionName appVersionName

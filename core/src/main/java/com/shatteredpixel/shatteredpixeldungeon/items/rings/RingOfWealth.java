@@ -122,7 +122,7 @@ public class RingOfWealth extends Ring {
 		CounterBuff dropsToEquip = target.buff(DropsToEquipTracker.class);
 		if (dropsToEquip == null){
 			dropsToEquip = Buff.affect(target, DropsToEquipTracker.class);
-			dropsToEquip.countUp( Random.NormalIntRange(5, 10) );
+			dropsToEquip.countUp( 2 );
 		}
 
 		//now handle reward logic
@@ -149,7 +149,8 @@ public class RingOfWealth extends Ring {
 					i = genEquipmentDrop(equipBonus - 1);
 				} while (Challenges.isItemBlocked(i));
 				drops.add(i);
-				dropsToEquip.countUp(Random.NormalIntRange(5, 10));
+                dropsToEquip.countUp(2);
+                //dropsToEquip.countUp(Random.NormalIntRange(5, 10));
 			} else {
 				Item i;
 				do {
@@ -293,7 +294,8 @@ public class RingOfWealth extends Ring {
 		}
 		//minimum level is 1/2/3/4/5/6 when ring level is 1/3/5/7/9/11
 		if (result.isUpgradable()){
-			int minLevel = (level+1)/2;
+			//int minLevel = (level+1)/2;
+            int minLevel = (level+1)/2 + 5;
 			if (result.level() < minLevel){
 				result.level(minLevel);
 			}
